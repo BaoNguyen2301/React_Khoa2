@@ -2,11 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import ProductList from './Props/ProductList';
 import dataJson from './Data/data.json';
+import DanhSachSanPham from './Props/DanhSachSanPham';
 
 function App() {
   return (
-    <div className="container-fluid">
-      <div className='row'>
+    <div>
+      {/* <div className='row'>
         <div className='col-4'>
           <div className="nav flex-column nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{ minHeight: 800 }}>
             <button className="nav-link active text-left" id="v-pills-home-tab" data-toggle="pill" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
@@ -20,10 +21,9 @@ function App() {
             </div>
             <div className="tab-pane fade" id="shop" role="tabpanel" aria-labelledby="v-pills-profile-tab">2</div>
           </div>
-
-          
         </div>
-      </div>
+      </div> */}
+      <DanhSachSanPham/>
     </div>
   );
 }
