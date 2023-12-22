@@ -3,6 +3,7 @@ import './App.css';
 import ProductList from './Props/ProductList';
 import dataJson from './Data/data.json';
 import DanhSachSanPham from './Props/DanhSachSanPham';
+import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           </div>
         </div>
       </div> */}
-      <DanhSachSanPham/>
+      {/* <DanhSachSanPham/> */}
+      <ExerciseCarStore/>
     </div>
   );
 }

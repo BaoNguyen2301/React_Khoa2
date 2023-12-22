@@ -10,7 +10,7 @@ export default class SanPham extends Component {
                 <div className="card-body">
                     <h4 className="card-title">{dataSanPham.tenSP}</h4>
                     <p className="card-text">{dataSanPham.giaBan}</p>
-                    <button className='btn btn-dark text-white w3-button w3-green' onClick={() => {this.props.changePhone(dataSanPham)}}>Xem chi tiết</button>
+                    <button className='btn btn-dark text-white w3-button w3-green' onClick={() => {dataSanPham.changePhone(dataSanPham)}}>Xem chi tiết</button>
                 </div>
             </div></div>
         )
