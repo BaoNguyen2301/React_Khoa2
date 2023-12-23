@@ -4,6 +4,7 @@ import ProductList from './Props/ProductList';
 import dataJson from './Data/data.json';
 import DanhSachSanPham from './Props/DanhSachSanPham';
 import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
+import ExerciseCart from './Props/ExerciseCart/ExerciseCart';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         </div>
       </div> */}
       {/* <DanhSachSanPham/> */}
-      <ExerciseCarStore/>
+      {/* <ExerciseCarStore/> */}
+      <ExerciseCart/>
     </div>
   );
 }
