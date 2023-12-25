@@ -3,22 +3,36 @@ import React, { Component } from 'react'
 export default class CartModal extends Component {
 
   renderCart = () => {
-    let {gioHang} = this.props;
+    let { gioHang } = this.props;
     return gioHang.map((spGioHang, index) => {
       return <tr key={index}>
         <td>
           <img style={{ width: 35, height: 35 }} src={spGioHang.hinhAnh} alt={spGioHang.hinhAnh}></img>
         </td>
-        <td>{spGioHang.maSP}</td>
-        <td>{spGioHang.tenSP}</td>
-        <td>{spGioHang.soLuong}</td>
-        <td>{spGioHang.giaBan}</td>
-        <td>{spGioHang.giaBan * spGioHang.soLuong}</td>
+        <td className='pt-3'>{spGioHang.maSP}</td>
+        <td className='pt-3'>{spGioHang.tenSP}</td>
+        <td className='pt-3'>
+          <button className='btn btn-success px-1' onClick={()=>this.props.tangGiamSoLuong(spGioHang.maSP,1)}>+</button>
+          {spGioHang.soLuong.toLocaleString()}
+          <button className='btn btn-success px-1' onClick={()=>this.props.tangGiamSoLuong(spGioHang.maSP,-1)}>-</button>
+          </td>
+        <td className='pt-3'>{spGioHang.giaBan.toLocaleString()}</td>
+        <td className='pt-3'>{(spGioHang.giaBan * spGioHang.soLuong).toLocaleString()}</td>
+        <td>
+          <button className='w3-button w3-red w3-border' onClick={()=>{this.props.xoaGioHang(spGioHang.maSP)}}>Xóa</button>
+        </td>
       </tr>
     })
   }
 
 
+  tinhTongTien = ()=> {
+    let { gioHang } = this.props;
+    return gioHang.reduce((tongTien, spGioHang, index)=>{
+      return tongTien += spGioHang.soLuong * spGioHang.giaBan;
+    },0).toLocaleString();
+  }
+  
 
   render() {
     return (
@@ -44,16 +58,23 @@ export default class CartModal extends Component {
                       <th>Số lượng</th>
                       <th>Đơn giá</th>
                       <th>Thành tiên</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                      {this.renderCart()}
+                    {this.renderCart()}
                   </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colSpan={5}></td>
+                      <td>Tổng tiền</td>
+                      <td>{this.tinhTongTien()}</td>
+                    </tr>
+                  </tfoot>
                 </table>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save</button>
               </div>
             </div>
           </div>

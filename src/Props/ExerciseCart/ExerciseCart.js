@@ -56,6 +56,48 @@ export default class ExerciseCart extends Component {
         })
       }
 
+      xoaGioHang = (maSP)=>{
+        // thuc hien tinh nang xoa gio hang
+        let index = this.state.gioHang.findIndex(spGioHang => spGioHang.maSP === maSP);
+        if(index !== -1){
+          this.state.gioHang.splice(index,1);
+        }
+
+        this.setState({
+          gioHang: this.state.gioHang
+        })
+      }
+
+      tinhTongSoLuong = ()=>{
+        // let tongSoLuong = 0;
+        // for(let i = 0; i< this.state.gioHang.length; i++){
+        //   let spGioHang = this.state.gioHang[i];
+        //   tongSoLuong += spGioHang.soLuong;
+        // }
+        // return tongSoLuong;
+        return this.state.gioHang.reduce((tongSoLuong,spGioHang,index) =>{
+          return tongSoLuong += spGioHang.soLuong
+        },0)
+
+      }
+      
+      tangGiamSoLuong = (maSP, number)=> {
+        let gioHang = [...this.state.gioHang];
+
+        let index = gioHang.findIndex(spGH => spGH.maSP === maSP);
+        if(index !== -1){
+          if(gioHang[index] <= 1 && number === -1){
+            alert('Số lượng tối thiểu là 1!')
+            return;
+          }
+          // tim ra san pham tring gio hang thu index => tang so luong
+          gioHang[index].soLuong += number;
+        }
+        //render va gan lai gia tri
+        this.setState({
+          gioHang: gioHang
+        })
+      }
 
     render() {
         return (
@@ -63,11 +105,11 @@ export default class ExerciseCart extends Component {
                 <h3 className='display-4 text-center'>BÀI TẬP GIỎ HÀNG</h3>
                 <div className='text-right'  data-toggle="modal" data-target="#modelId">
                     <span style={{width: 17, cursor: 'pointer'}}>
-                    <i class="fa fa-cart-arrow-down"></i>(0)Giỏ hàng
+                    <i class="fa fa-cart-arrow-down"></i>({this.tinhTongSoLuong()})Giỏ hàng
                     </span>
                 </div>
                 <div className='container'>
-                <CartModal gioHang={this.state.gioHang} />
+                <CartModal gioHang={this.state.gioHang} xoaGioHang ={this.xoaGioHang} tangGiamSoLuong={this.tangGiamSoLuong}/>
                 <ProductListEXC SanPhanChiTiet= {this.state.SanPhanChiTiet} changePhone={this.changePhone} themGioHang={this.themGioHang}/>
                 </div>
             </div>
