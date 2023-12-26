@@ -5,6 +5,7 @@ import dataJson from './Data/data.json';
 import DanhSachSanPham from './Props/DanhSachSanPham';
 import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
 import ExerciseCart from './Props/ExerciseCart/ExerciseCart';
+import BaiTapGioHangRedux from './GioHangRedux/BaiTapGioHangRedux';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       </div> */}
       {/* <DanhSachSanPham/> */}
       {/* <ExerciseCarStore/> */}
-      <ExerciseCart/>
+      {/* <ExerciseCart/> */}
+      <BaiTapGioHangRedux/>
     </div>
   );
 }

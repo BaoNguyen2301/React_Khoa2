@@ -1,0 +1,75 @@
+state, setState : thay doi du lieu
+props: truyen du lieu tu cha sang con
+toLocaleString() : dinh dang lai cho dep, vd: 2000 -> 2,000
+splice :xoa phan tu
+.reduce: tinh so luong
+----------------------------
+npm i redux
+npm i react-redux
+tao thu muc redux
+tao file java rootReducer.js
+
+import {combineReducers} from 'redux'
+const rootReducer = combineReducers({// store tổng
+
+})
+export default rootReducer;
+
+vào file index.js setup
+//setup redux
+import{Provider}from 'react-redux'
+import {createStore} from 'redux'
+import rootReducer from './redux/rootReducer';
+
+const store = createStore(rootReducer);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+    
+);
+----------------------------------------
+//setup state gio hang tren store
+
+const stateGioHang = {
+    gioHang: [{maSP: 1, tenSP: "san pham mac dinh", hinhAnh:'', soLuong:1, gia: 1000}]
+}
+
+const BaiTapGioHangReducer = (state = stateGioHang, action)=>{
+    return{...state}
+}
+// lay store tu root ra component
+const mapStateToProps = state => { // day la state tong cua ung dung chua cac state con (rootReducer)
+    return {
+        gioHang: state.stateGioHang.gioHang
+    }
+}
+
+export default connect(mapStateToProps)(GioHangRedux)
+------------------------------
+// ham gui du lieu len store
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    themGioHang: (sanPham)=>{
+      // tao ra san pham gio hang
+      let spGioHang ={
+        maSP: sanPham.maSP, 
+        tenSP: sanPham.tenSP, 
+        hinhAnh: sanPham.hinhAnh, 
+        soLuong:1, 
+        giaBan: sanPham.giaBan}
+      //tao ra action
+      let action = {
+        type: 'THEM_GIO_HANG', //thuoc tinh bat buoc cua action
+        spGioHang
+      }
+
+      //dung ham dispatch tu redux => gui du lieu len reducer
+      dispatch(action);
+    }
+  }
+}
+
+export default connect(mapDispatchToProps)(ProductItemRedux)
