@@ -6,10 +6,14 @@ import DanhSachSanPham from './Props/DanhSachSanPham';
 import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
 import ExerciseCart from './Props/ExerciseCart/ExerciseCart';
 import BaiTapGioHangRedux from './GioHangRedux/BaiTapGioHangRedux';
+import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac';
+
+
 
 function App() {
   return (
     <div>
+
       {/* <div className='row'>
         <div className='col-4'>
           <div className="nav flex-column nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{ minHeight: 800 }}>
@@ -29,7 +33,8 @@ function App() {
       {/* <DanhSachSanPham/> */}
       {/* <ExerciseCarStore/> */}
       {/* <ExerciseCart/> */}
-      <BaiTapGioHangRedux/>
+      {/* <BaiTapGioHangRedux/> */}
+      <BaiTapGameXucXac/>
     </div>
   );
 }
