@@ -17,8 +17,9 @@
     background-color: rgb(126, 156, 240);
     color: white;
     border-radius: 30%;
-    border: 5px solid white;
+    border: 5px solid greenyellow;
 }
 .btnGame:hover{
     background-color: aquamarine;
+    border-color: white;
 }

@@ -73,3 +73,5 @@ const mapDispatchToProps = (dispatch) =>{
 }
 
 export default connect(mapDispatchToProps)(ProductItemRedux)
+--------------------------------
+ham random => Math.floor(Math.random() * 10);
