@@ -8,6 +8,7 @@ import ExerciseCart from './Props/ExerciseCart/ExerciseCart';
 import BaiTapGioHangRedux from './GioHangRedux/BaiTapGioHangRedux';
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac';
 import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi';
+import BaiTapBookingTicket from './BaiTapRedux/BaiTapBookingTicket/BaiTapBookingTicket';
 
 
 
@@ -36,7 +37,8 @@ function App() {
       {/* <ExerciseCart/> */}
       {/* <BaiTapGioHangRedux/> */}
       {/* <BaiTapGameXucXac/> */}
-      <BaiTapOanTuXi/>
+      {/* <BaiTapOanTuXi/> */}
+      <BaiTapBookingTicket/>
     </div>
   );
 }
