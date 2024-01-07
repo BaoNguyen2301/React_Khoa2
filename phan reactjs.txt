@@ -75,3 +75,16 @@ const mapDispatchToProps = (dispatch) =>{
 export default connect(mapDispatchToProps)(ProductItemRedux)
 --------------------------------
 ham random => Math.floor(Math.random() * 10);
+---------------------------------
+let count = 10;
+
+      //khai bao lap di lap lai
+      let randomComputerItem = setInterval(() => {
+        dispatch({
+          type: 'RANDOM',
+        })
+        count++;
+        if(count >=10){
+          clearInterval(randomComputerItem);
+        }
+      }, 100);
