@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Cầu Ma",
+        "img": "./imgTruyen/cauma.jpg",
+        "like": 0,
+        "active": false
+    },
+    {
+        "id": 2,
+        "name": "Tiên Nghịch",
+        "img": "./imgTruyen/tiennghich.jpg",
+        "like": 0,
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "Ngã Dục Phong Thiên",
+        "img": "./imgTruyen/ngaducphongthien.jpg",
+        "like": 0,
+        "active": false
+    },
+    {
+        "id": 4,
+        "name": "Nhất Niệm Vĩnh Hằng",
+        "img": "./imgTruyen/nhatniemvinhhang.jpg",
+        "like": 0,
+        "active": false
+    }
+]

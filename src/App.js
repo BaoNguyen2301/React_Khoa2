@@ -11,6 +11,7 @@ import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi';
 import BaiTapBookingTicket from './BaiTapRedux/BaiTapBookingTicket/BaiTapBookingTicket';
 import DemoPureComponent from './DemoPureComponents/DemoPureComponent';
 import ContextDemo from './ContextDemo/ContextDemo';
+import ExcontextStoriesList from './ContextDemo/ExContextStoriesList/ExcontextStoriesList';
 
 
 
@@ -42,7 +43,8 @@ function App() {
       {/* <BaiTapOanTuXi/> */}
       {/* <BaiTapBookingTicket/> */}
       {/* <DemoPureComponent/> */}
-      <ContextDemo/>
+      {/* <ContextDemo/> */}
+      <ExcontextStoriesList/>
     </div>
   );
 }
