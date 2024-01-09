@@ -9,6 +9,7 @@ import BaiTapGioHangRedux from './GioHangRedux/BaiTapGioHangRedux';
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac';
 import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi';
 import BaiTapBookingTicket from './BaiTapRedux/BaiTapBookingTicket/BaiTapBookingTicket';
+import DemoPureComponent from './DemoPureComponents/DemoPureComponent';
 
 
 
@@ -38,7 +39,8 @@ function App() {
       {/* <BaiTapGioHangRedux/> */}
       {/* <BaiTapGameXucXac/> */}
       {/* <BaiTapOanTuXi/> */}
-      <BaiTapBookingTicket/>
+      {/* <BaiTapBookingTicket/> */}
+      <DemoPureComponent/>
     </div>
   );
 }
